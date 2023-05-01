@@ -1,7 +1,5 @@
 package;
 
-import sys.io.File;
-import sys.FileSystem;
 import openfl.utils.Assets;
 import haxe.Json;
 import haxe.format.JsonParser;
@@ -17,12 +15,6 @@ typedef StageFile = {
 	var boyfriend:Array<Dynamic>;
 	var girlfriend:Array<Dynamic>;
 	var opponent:Array<Dynamic>;
-	var hide_girlfriend:Bool;
-
-	var camera_boyfriend:Array<Float>;
-	var camera_opponent:Array<Float>;
-	var camera_girlfriend:Array<Float>;
-	var camera_speed:Null<Float>;
 }
 
 class StageData {
@@ -48,8 +40,8 @@ class StageData {
 					stage = 'school';
 				case 'thorns':
 					stage = 'schoolEvil';
-				case 'ugh' | 'guns' | 'stress':
-					stage = 'tank';
+					case 'meet' | 'Impulse' | 'change':
+					stage = '1';
 				default:
 					stage = 'stage';
 			}
@@ -69,18 +61,9 @@ class StageData {
 		var rawJson:String = null;
 		var path:String = Paths.getPreloadPath('stages/' + stage + '.json');
 
-		#if windows
-		var modPath:String = Paths.modFolders('stages/' + stage + '.json');
-		if(FileSystem.exists(modPath)) {
-			rawJson = File.getContent(modPath);
-		} else if(FileSystem.exists(path)) {
-			rawJson = File.getContent(path);
-		}
-		#else
 		if(Assets.exists(path)) {
 			rawJson = Assets.getText(path);
 		}
-		#end
 		else
 		{
 			return null;

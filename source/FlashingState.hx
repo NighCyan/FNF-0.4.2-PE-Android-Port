@@ -11,10 +11,22 @@ import flixel.addons.transition.FlxTransitionableState;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 
+typedef somethingchange =
+{
+	
+	主界面的左下角第一行文本:String,
+	主界面的左下角第二行文本:String,
+	要不要用C键:Bool,
+	机器人的文本:String,
+	开头人物长:Float,
+	开头人物宽:Float,
+	第一次进入游戏时的那个小黑幕中的文字:String
+	
+}
 class FlashingState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
-
+    var somethingchangelol:somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
 	var warnText:FlxText;
 	override function create()
 	{
@@ -23,20 +35,14 @@ class FlashingState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		warnText = new FlxText(0, 0, FlxG.width,
-			"Hey, watch out!\n
-			This Mod contains some flashing lights!\n
-			Press ENTER to disable them now or go to Options Menu.\n
-			Press ESCAPE to ignore this message.\n
-			You've been warned!",
-			32);
-		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
+		warnText = new FlxText(0, 0, FlxG.width,somethingchangelol.第一次进入游戏时的那个小黑幕中的文字,32);
+		warnText.setFormat(Paths.font("中文.ttf"), 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
 
-                #if android
-                addVirtualPad(NONE, A_B);
-                #end
+		#if mobileC
+		addVirtualPad(NONE, A);
+		#end
 	}
 
 	override function update(elapsed:Float)
@@ -48,7 +54,7 @@ class FlashingState extends MusicBeatState
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;
 				if(!back) {
-					ClientPrefs.flashing = false;
+					ClientPrefs.flashing = true;
 					ClientPrefs.saveSettings();
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 					FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker) {
