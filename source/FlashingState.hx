@@ -11,7 +11,7 @@ import flixel.addons.transition.FlxTransitionableState;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 
-typedef somethingchange =
+typedef Somethingchange =
 {
 	
 	主界面的左下角第一行文本:String,
@@ -26,7 +26,7 @@ typedef somethingchange =
 class FlashingState extends MusicBeatState
 {
 	public static var leftState:Bool = false;
-    var somethingchangelol:somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
+    var Somethingchangelol:Somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
 	var warnText:FlxText;
 	override function create()
 	{
@@ -35,7 +35,7 @@ class FlashingState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		warnText = new FlxText(0, 0, FlxG.width,somethingchangelol.第一次进入游戏时的那个小黑幕中的文字,32);
+		warnText = new FlxText(0, 0, FlxG.width,Somethingchangelol.第一次进入游戏时的那个小黑幕中的文字,32);
 		warnText.setFormat(Paths.font("中文.ttf"), 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);

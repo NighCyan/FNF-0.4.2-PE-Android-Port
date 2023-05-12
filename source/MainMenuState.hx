@@ -23,7 +23,7 @@ import editors.MasterEditorMenu;
 
 using StringTools;
 
-typedef somethingchange =
+typedef Somethingchange =
 {
 	
 	主界面的左下角第一行文本:String,
@@ -50,7 +50,7 @@ class MainMenuState extends MusicBeatState
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
-    var somethingchangelol:somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
+    var Somethingchangelol:Somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
 	override function create()
 	{
 		#if desktop
@@ -120,11 +120,11 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, somethingchangelol.主界面的左下角第一行文本, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, Somethingchangelol.主界面的左下角第一行文本, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, somethingchangelol.主界面的左下角第二行文本, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, Somethingchangelol.主界面的左下角第二行文本, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -147,7 +147,7 @@ class MainMenuState extends MusicBeatState
 		#end*/
 
 		#if mobileC
-		 if (somethingchangelol.要不要用C键 == true) {
+		 if (Somethingchangelol.要不要用C键 == true) {
       addVirtualPad(UP_DOWN, A_B_C);
     }
      else {

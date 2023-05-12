@@ -62,7 +62,7 @@ import ui.Mobilecontrols;
 #end
 
 using StringTools;
-typedef somethingchange =
+typedef Somethingchange =
 {
 	
 	主界面的左下角第一行文本:String,
@@ -559,7 +559,7 @@ class PlayState extends MusicBeatState
 setScrollFactor('2', 1.02, 1.02)
 setScrollFactor('1', 1.06, 1.06)*/
             case '1': // 轩恪的！
-            var somethingchangelol:somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
+            var Somethingchangelol:Somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
             var xuankemade:BGSprite = new BGSprite('QWQ/3', -1300,-400);
             var xuankemade1:BGSprite = new BGSprite('QWQ/2', -1300,-400);
             var xuankemade2:BGSprite = new BGSprite('QWQ/1', -1300,-400);
@@ -939,7 +939,7 @@ setScrollFactor('1', 1.06, 1.06)*/
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, somethingchangelol.机器人的文本, 32);
+		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, Somethingchangelol.机器人的文本, 32);
 		botplayTxt.setFormat(Paths.font("中文.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;

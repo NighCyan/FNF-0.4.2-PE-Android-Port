@@ -29,7 +29,8 @@ import lime.app.Application;
 import openfl.Assets;
 
 using StringTools;
-typedef somethingchange =
+
+typedef Somethingchange =
 {
 	
 	主界面的左下角第一行文本:String,
@@ -66,7 +67,7 @@ class TitleState extends MusicBeatState
 
 	var mustUpdate:Bool = false;
 	public static var updateVersion:String = '';
-    var somethingchangelol:somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
+    var Somethingchangelol:Somethingchange = Json.parse(Paths.getTextFromFile('images/mainEditor.json'));
 	override public function create():Void
 	{
 		#if android
@@ -221,7 +222,7 @@ class TitleState extends MusicBeatState
 		if(!FlxG.save.data.psykaEasterEgg || !easterEggEnabled) {
 			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 			gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-			gfDance.scale.set(somethingchangelol.开头人物长, somethingchangelol.开头人物宽);
+			gfDance.scale.set(Somethingchangelol.开头人物长, Somethingchangelol.开头人物宽);
 			gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 			gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
