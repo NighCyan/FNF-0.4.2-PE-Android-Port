@@ -1,9 +1,9 @@
 {	
-	"主界面的左下角第一行文本":"vs imposter by xuanke",
-	"主界面的左下角第二行文本":"Psych Engine v0.4.2",
-	"要不要用C键":false,
-	"机器人的文本":"开机器没意思了",
-	"开头人物长":1,
-	"开头人物宽":1,
-	"第一次进入游戏时的那个小黑幕中的文字":"Hey, watch out!\nThis Mod contains some flashing lights!\nPress ENTER to disable them now or go to Options Menu.\nPress ESCAPE to ignore this message.\nYou've been warned!"
+	"text1":"vs imposter by xuanke",
+	"text2":"Psych Engine v0.4.2",
+	"Cbutton":false,
+	"bottxt":"开机器没意思了",
+	"begincharX":1,
+	"begincharY":1,
+	"flashmenutext":"Hey, watch out!\nThis Mod contains some flashing lights!\nPress ENTER to disable them now or go to Options Menu.\nPress ESCAPE to ignore this message.\nYou've been warned!"
 }
