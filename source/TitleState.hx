@@ -33,13 +33,13 @@ using StringTools;
 typedef Somethingchange =
 {
 	
-	主界面的左下角第一行文本:String,
-	主界面的左下角第二行文本:String,
-	要不要用C键:Bool,
-	机器人的文本:String,
-	开头人物长:Float,
-	开头人物宽:Float,
-	第一次进入游戏时的那个小黑幕中的文字:String
+	text1:String,
+	text2:String,
+	Cbutton:Bool,
+	bottxt:String,
+	begincharX:Float,
+	begincharY:Float,
+	flashmenutext:String
 	
 }
 
@@ -222,7 +222,7 @@ class TitleState extends MusicBeatState
 		if(!FlxG.save.data.psykaEasterEgg || !easterEggEnabled) {
 			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 			gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-			gfDance.scale.set(Somethingchangelol.开头人物长, Somethingchangelol.开头人物宽);
+			gfDance.scale.set(Somethingchangelol.begincharX, Somethingchangelol.begincharY);
 			gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 			gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}

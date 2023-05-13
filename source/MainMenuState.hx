@@ -26,13 +26,13 @@ using StringTools;
 typedef Somethingchange =
 {
 	
-	主界面的左下角第一行文本:String,
-	主界面的左下角第二行文本:String,
-	要不要用C键:Bool,
-	机器人的文本:String,
-	开头人物长:Float,
-	开头人物宽:Float,
-	第一次进入游戏时的那个小黑幕中的文字:String
+	text1:String,
+	text2:String,
+	Cbutton:Bool,
+	bottxt:String,
+	begincharX:Float,
+	begincharY:Float,
+	flashmenutext:String
 	
 }
 
@@ -120,11 +120,11 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, Somethingchangelol.主界面的左下角第一行文本, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, Somethingchangelol.text1, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, Somethingchangelol.主界面的左下角第二行文本, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, Somethingchangelol.text2, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -147,7 +147,7 @@ class MainMenuState extends MusicBeatState
 		#end*/
 
 		#if mobileC
-		 if (Somethingchangelol.要不要用C键 == true) {
+		 if (Somethingchangelol.Cbutton == true) {
       addVirtualPad(UP_DOWN, A_B_C);
     }
      else {

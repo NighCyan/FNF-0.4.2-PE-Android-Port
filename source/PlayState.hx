@@ -65,13 +65,13 @@ using StringTools;
 typedef Somethingchange =
 {
 	
-	主界面的左下角第一行文本:String,
-	主界面的左下角第二行文本:String,
-	要不要用C键:Bool,
-	机器人的文本:String,
-	开头人物长:Float,
-	开头人物宽:Float,
-	第一次进入游戏时的那个小黑幕中的文字:String
+	text1:String,
+	text2:String,
+	Cbutton:Bool,
+	bottxt:String,
+	begincharX:Float,
+	begincharY:Float,
+	flashmenutext:String
 }
 class PlayState extends MusicBeatState
 {
@@ -939,7 +939,7 @@ setScrollFactor('1', 1.06, 1.06)*/
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
 
-		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, Somethingchangelol.机器人的文本, 32);
+		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, Somethingchangelol.bottxt, 32);
 		botplayTxt.setFormat(Paths.font("中文.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;

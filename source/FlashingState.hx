@@ -14,13 +14,13 @@ import flixel.util.FlxTimer;
 typedef Somethingchange =
 {
 	
-	主界面的左下角第一行文本:String,
-	主界面的左下角第二行文本:String,
-	要不要用C键:Bool,
-	机器人的文本:String,
-	开头人物长:Float,
-	开头人物宽:Float,
-	第一次进入游戏时的那个小黑幕中的文字:String
+	text1:String,
+	text2:String,
+	Cbutton:Bool,
+	bottxt:String,
+	begincharX:Float,
+	begincharY:Float,
+	flashmenutext:String
 	
 }
 class FlashingState extends MusicBeatState
@@ -35,7 +35,7 @@ class FlashingState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		warnText = new FlxText(0, 0, FlxG.width,Somethingchangelol.第一次进入游戏时的那个小黑幕中的文字,32);
+		warnText = new FlxText(0, 0, FlxG.width,Somethingchangelol.flashmenutext,32);
 		warnText.setFormat(Paths.font("中文.ttf"), 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
